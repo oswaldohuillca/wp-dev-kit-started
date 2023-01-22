@@ -7,8 +7,8 @@
   ?>
 </head>
 
-<body class="bg-lime-900">
+<body class="bg-amber-300">
 
-  <header class="bg-green-500 text-white font-bold">
+  <header class="bg-green-300 text-white font-bold">
     cabecera
   </header>

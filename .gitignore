@@ -25,4 +25,8 @@ dist-ssr
 
 #files
 .env
-tailwind.config.cjs
+pnpm-lock.yaml
+
+#folders
+wp_data
+db_data
