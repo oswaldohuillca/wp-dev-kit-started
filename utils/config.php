@@ -32,14 +32,17 @@ class WpDevKit
     if ($this->is_dev()) {
 
       // We need to add HMR ;)
-      $script = <<<HTML
-            <script type="module">
-            import "http://localhost:5173/src/main.ts"
-            window.process = { env: { NODE_ENV: "development" }}
-            </script>
-        HTML;
 
-      echo $script;
+add_action("wp_footer", function(){
+	$script = <<<HTML
+		<script type="module">
+			import "http://localhost:5173/src/main.ts"
+			window.process = {env:{NOVE_ENV:"development"}}
+		</script>
+	HTML;
+	echo $script;
+		
+});
     } else {
       $this->assets = $this->get_assets();
 
