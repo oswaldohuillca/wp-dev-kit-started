@@ -12,6 +12,9 @@ class WpDevKit
 
   public static function load_env(): void
   {
+
+    if (!file_exists(dirname(__DIR__) . "/.env")) return;
+
     $lines = file(dirname(__DIR__) . "/.env", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
     foreach ($lines as $line) {
