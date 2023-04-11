@@ -33,13 +33,23 @@ class WpDevKit
   {
 
     if ($this->is_dev()) {
+      $script_data_array = array(
+        'url' => admin_url('admin-ajax.php'),
+        'domain' => site_url("/"),
+        'security' => wp_create_nonce('consult_ajax'),
+      );
+
+      $json_data = json_encode($script_data_array);
 
       // We need to add HMR ;)
-      add_action("wp_footer", function () {
+      add_action("wp_footer", function () use ($json_data) {
         $script = <<<HTML
+          <script>
+            var wpCredentials = $json_data
+          </script>
           <script type="module">
             import "http://localhost:5173/src/main.ts"
-            window.process = {env:{NOVE_ENV:"development"}}
+            window.process = {env:{NODE_ENV:"development"}}
           </script>
         HTML;
         echo $script;
