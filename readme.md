@@ -25,7 +25,7 @@ pnpm install
 pnpm run dev
 ```
 
-- Finalmente genera el empaquetado.
+- Para poder crear el build ejecute.
 
 ```sh
 pnpm run build
@@ -59,3 +59,10 @@ const archive = archiver('zip', {
   zlib: { level: 9 } // Sets the compression level.
 })
 ```
+
+- Finalmente ejecute **npm run zip** para generar su TEMA de WORDPRESS.
+
+```sh
+pnpm run zip
+```
+- Suba el zip a su página con WORDPRESS y listo.
