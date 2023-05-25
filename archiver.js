@@ -4,10 +4,11 @@ import pjson from './package.json' assert { type: "json" }
 import path from 'path'
 import { fileURLToPath } from 'url'
 
+const ZIP_NAME = 'generatepress_child'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-const output = fs.createWriteStream(`${__dirname}/generatepress_child.zip`)
+const output = fs.createWriteStream(`${__dirname}/${ZIP_NAME}.zip`)
 const archive = archiver('zip', {
   zlib: { level: 9 } // Sets the compression level.
 })
