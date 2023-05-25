@@ -7,6 +7,7 @@ class WpDevKit
   public function __construct()
   {
     $this->get_script();
+    $this->get_reusable_functions();
     $this->create_api_endpoint();
   }
 
@@ -18,8 +19,12 @@ class WpDevKit
     $lines = file(dirname(__DIR__) . "/.env", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
     foreach ($lines as $line) {
-      list($key, $value) = explode('=', $line);
-      putenv("$key=$value");
+      if (preg_match('/=/', $line)) {
+        list($key, $value) = explode('=', $line);
+        if (isset($key) && isset($value)) {
+          putenv("$key=$value");
+        }
+      }
     }
   }
 
@@ -32,15 +37,9 @@ class WpDevKit
   public function get_script(): void
   {
 
+    $json_data = json_encode($this->get_wp_credentails());
+
     if ($this->is_dev()) {
-      $script_data_array = array(
-        'url' => admin_url('admin-ajax.php'),
-        'domain' => site_url("/"),
-        'security' => wp_create_nonce('consult_ajax'),
-      );
-
-      $json_data = json_encode($script_data_array);
-
       // We need to add HMR ;)
       add_action("wp_footer", function () use ($json_data) {
         $script = <<<HTML
@@ -56,11 +55,14 @@ class WpDevKit
       }, 30);
     } else {
       $this->assets = $this->get_assets();
+      $js = $this->assets["js"];
 
-      add_action('wp_enqueue_scripts', function () {
+      add_action('wp_enqueue_scripts', function () use ($json_data) {
         $js = $this->assets["js"];
-        wp_register_script('singulart-scripts', get_theme_file_uri() . "/dist/assets/{$js}", [], false, true);
-        wp_enqueue_script('singulart-scripts');
+        wp_register_script('wp-kit-scripts', get_theme_file_uri() . "/dist/assets/{$js}", [], false, true);
+
+        wp_localize_script('wp-kit-scripts', 'wpCredentials', $this->get_wp_credentails());
+        wp_enqueue_script('wp-kit-scripts');
       }, 30);
 
       add_action('wp_enqueue_scripts', function () {
@@ -94,6 +96,16 @@ class WpDevKit
     ];
   }
 
+
+  private function get_wp_credentails()
+  {
+    return array(
+      'url' => admin_url('admin-ajax.php'),
+      'public_url' => get_stylesheet_directory_uri() . '/public',
+      'domain' => site_url("/"),
+      'security' => wp_create_nonce('consult_ajax'),
+    );
+  }
 
   /**
    * Asign API REST based in files
@@ -132,13 +144,27 @@ class WpDevKit
         // Validate if file extension is .php
         if (!preg_match('/\.php/', $file)) return;
 
-        $filename = str_replace('.php', '', $file);
+        $filename = str_replace('.php', '', $file); // Extract filename
 
-        include_once($file_dir);
+        include_once($file_dir); // Incuding API file
 
-        add_action("wp_ajax_{$filename}", "{$filename}_handler");
-        add_action("wp_ajax_nopriv_{$filename}", "{$filename}_handler");
+        $function_name = "{$filename}_handler"; // Function name
+
+        if (function_exists($function_name)) { // Also if function exist proceced next step
+          add_action("wp_ajax_{$filename}", $function_name);
+          add_action("wp_ajax_nopriv_{$filename}", $function_name);
+        }
       }
     }
+  }
+
+
+  /**
+   * get core reusable functions
+   */
+
+  public function get_reusable_functions()
+  {
+    include __DIR__ . '/utils.php';
   }
 }
