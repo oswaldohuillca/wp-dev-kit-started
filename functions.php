@@ -4,8 +4,13 @@ if (!defined('ABSPATH')) {
   exit; // Exit if accessed directly.
 }
 
-require(__DIR__ . "/core/index.php");
+require_once(__DIR__ . '/vendor/autoload.php');
 
-WpDevKit::load_env();
+use Timber\Timber;
+use Oswaldohuillca\WpDevKitStarted\core\WpDevKit;
 
-new WpDevKit();
+// Initialize Timber.
+Timber::init();
+
+// Initialize WpDevKit.
+WpDevKit::init();

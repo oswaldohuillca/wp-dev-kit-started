@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="{{site.language}}">
+    <head>
+        {{function('get_header')}}
+    </head>
+
+    <body>
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+
+        <footer>
+            {% block footer %}
+                <p>Brought to you with ❤ by the Timber.</p>
+            {% endblock %}
+        </footer>
+    </body>
+    {{function('get_footer')}}
+</html>
