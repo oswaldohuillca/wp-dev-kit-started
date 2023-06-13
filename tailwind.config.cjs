@@ -1,3 +1,4 @@
+// const plugin = require('tailwindcss/plugin');
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -973,5 +974,159 @@ module.exports = {
     'active',
     'disabled',
   ],
-  plugins: [],
+  plugins: [
+    // plugin(({matchUtilities}) => {
+    //   matchUtilities(
+    //     {
+    //       'ctext': (value) => ({
+    //         fontSize: `calc(100vw * (${value} / var(--width-base)));`
+    //       }),
+    //       'cleading': (value) => ({
+    //         lineHeight: `calc(100vw * (${value} / var(--width-base)));`
+    //       }),
+
+    //       'cp': (value) => ({
+    //         padding: `calc(100vw * (${value} / var(--width-base)));`
+    //       }),
+    //       'cpx': (value) => ({
+    //         paddingLeft: `calc(100vw * (${value} / var(--width-base)));`,
+    //         paddingRight: `calc(100vw * (${value} / var(--width-base)));`
+    //       }),
+    //       'cpy': (value) => ({
+    //         paddingTop: `calc(100vw * (${value} / var(--width-base)));`,
+    //         paddingBottom: `calc(100vw * (${value} / var(--width-base)));`
+    //       }),
+    //       'cpt': (value) => ({
+    //         paddingTop: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+    //       'cpb': (value) => ({
+    //         paddingBottom: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+    //       'cpl': (value) => ({
+    //         paddingLeft: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+    //       'cpr': (value) => ({
+    //         paddingRight: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+          
+    //       'cm': (value) => ({
+    //         margin: `calc(100vw * (${value} / var(--width-base)));`
+    //       }),
+    //       'cmx': (value) => ({
+    //         marginLeft: `calc(100vw * (${value} / var(--width-base)));`,
+    //         marginRight: `calc(100vw * (${value} / var(--width-base)));`
+    //       }),
+    //       'cmy': (value) => ({
+    //         marginTop: `calc(100vw * (${value} / var(--width-base)));`,
+    //         marginBottom: `calc(100vw * (${value} / var(--width-base)));`
+    //       }),
+    //       'cmt': (value) => ({
+    //         marginTop: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+    //       'cmb': (value) => ({
+    //         marginBottom: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+    //       'cml': (value) => ({
+    //         marginLefth: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+    //       'cmr': (value) => ({
+    //         marginRight: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+
+    //       'cw': (value) => ({
+    //         width: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+    //       'cmin-w': (value) => ({
+    //         minWidth: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+    //       'cmax-w': (value) => ({
+    //         maxWidth: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+    //       'ch': (value) => ({
+    //         height: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+    //       'cmin-h': (value) => ({
+    //         minHeight: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+    //       'cmax-h': (value) => ({
+    //         maxHeight: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+
+    //       'crounded': (value) => ({
+    //         borderRadius: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+    //       'crounded-t': (value) => ({
+    //         borderTopLeftRadius: `calc(100vw * (${value} / var(--width-base)));`,
+    //         borderTopRightRadius: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+    //       'crounded-b': (value) => ({
+    //         borderBottomLeftRadius: `calc(100vw * (${value} / var(--width-base)));`,
+    //         borderBottomRightRadius: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+    //       'crounded-r': (value) => ({
+    //         borderTopRightRadius: `calc(100vw * (${value} / var(--width-base)));`,
+    //         borderBottomRightRadius: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+    //       'crounded-l': (value) => ({
+    //         borderTopLeftRadius: `calc(100vw * (${value} / var(--width-base)));`,
+    //         borderBottomLeftRadius: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+    //       'crounded-tl': (value) => ({
+    //         borderTopLeftRadius: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+    //       'crounded-tr': (value) => ({
+    //         borderTopRightRadius: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+    //       'crounded-br': (value) => ({
+    //         borderBottomRightRadius: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+    //       'crounded-bl': (value) => ({
+    //         borderBottomLeftRadius: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+
+    //       'cborder': (value) => ({
+    //         borderWidth: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+    //       'cborder-t': (value) => ({
+    //         borderTopWidth: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+    //       'cborder-b': (value) => ({
+    //         borderBottomWidth: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+    //       'cborder-r': (value) => ({
+    //         borderRightWidth: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+    //       'cborder-l': (value) => ({
+    //         borderLeftWidth: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+
+    //       'cgap': (value) => ({
+    //         gap: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+
+    //       'cgap-x': (value) => ({
+    //         columnGap: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+    //       'cgap-y': (value) => ({
+    //         rowGap: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+
+    //       'ctop': (value) => ({
+    //         top: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+    //       'cright': (value) => ({
+    //         right: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+    //       'cbottom': (value) => ({
+    //         bottom: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+    //       'cleft': (value) => ({
+    //         left: `calc(100vw * (${value} / var(--width-base)));`,
+    //       }),
+
+    //     },
+    //   )
+
+    // })
+  ],
 }

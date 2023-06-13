@@ -1,0 +1,7 @@
+<?php
+
+    $icons = (object) array(
+        'apros' => '<svg width="46" height="40" viewBox="0 0 46 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="background-color: black;"><path d="M35.7771 36.5685C37.9158 37.4319 39.9641 35.1497 38.8753 33.1165L23.3503 4.12643C22.4135 2.37697 19.8993 2.39369 18.9858 4.15546L3.98095 33.0928C2.92037 35.1382 4.99374 37.3919 7.12024 36.5052L20.2063 31.0486C20.8049 30.799 21.4777 30.7952 22.0792 31.038L35.7771 36.5685Z" fill="white"/><rect x="5.20052" y="18.5068" width="9.44069" height="22.0578" rx="4.72034" transform="rotate(-45 5.20052 18.5068)" fill="url(#paint0_linear_337_485)"/><rect x="38.9707" y="2.77832" width="9.44069" height="35.0704" rx="4.72034" transform="rotate(45 38.9707 2.77832)" fill="url(#paint1_linear_337_485)"/><path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M17.0364 30.4228C15.7194 28.5554 15.8963 25.9564 17.5671 24.2856L21.0002 20.8525L24.2827 24.135C26.1513 26.0037 26.1513 29.0334 24.2827 30.9021C22.414 32.7707 19.3843 32.7707 17.5156 30.9021L17.0364 30.4228Z" fill="#00CEFF"/><defs><linearGradient id="paint0_linear_337_485" x1="9.92086" y1="18.5068" x2="9.92086" y2="40.5646" gradientUnits="userSpaceOnUse"><stop stop-color="#00CEFF"/><stop offset="1" stop-color="#0054FC"/></linearGradient><linearGradient id="paint1_linear_337_485" x1="43.0249" y1="5.32605" x2="45.0378" y2="34.4859" gradientUnits="userSpaceOnUse"><stop stop-color="#15F2C6"/><stop offset="1" stop-color="#00CEFF"/></linearGradient></defs></svg>',
+    );
+
+    $GLOBALS['icons'] = $icons;

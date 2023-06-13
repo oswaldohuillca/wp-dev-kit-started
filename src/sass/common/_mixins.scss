@@ -1,0 +1,5 @@
+// CALCULATE
+@function ca($number: 0) {
+    @return calc(100vw * ($number / var(--width-base)));
+}
+  

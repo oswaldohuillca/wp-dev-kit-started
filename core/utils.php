@@ -185,3 +185,34 @@ function get_data(string $key, array $data)
   }
   return null;
 }
+
+
+// ICONS
+
+function get_icon(string $name)
+{
+  return $GLOBALS['icons']->$name;
+}
+
+
+// BLOCK GUTENBERG
+
+function get_name_title_block_file ($name){
+  $name = str_replace(' ', '-', $name);
+  return $name;
+}
+
+function get_title_block_name ($name){
+  $name = str_replace('-', ' ', $name);
+  return ucfirst($name);
+}
+
+function get_keywords_block_name ($name){
+  return explode(" ", strtolower($name));
+}
+
+// CAL
+
+function ca (int $number = 1){
+  return "calc(100vw * ($number / var(--width-base)))";
+}

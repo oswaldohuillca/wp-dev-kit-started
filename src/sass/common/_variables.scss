@@ -1,0 +1,10 @@
+:root {
+    --width-base: 375;
+}
+
+@media (min-width: theme("screens.md")) {
+    :root {
+        --width-base: 1920;
+    }
+}
+  

@@ -165,6 +165,8 @@ class WpDevKit
 
   public function get_reusable_functions()
   {
+    include __DIR__ . '/variables.php';
+    include __DIR__ . '/blocks-gutenberg.php';
     include __DIR__ . '/utils.php';
   }
 }
