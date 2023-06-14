@@ -67,20 +67,22 @@ pnpm run zip
 ```
 - Suba el zip a su página con WORDPRESS y listo.
 
-## Como empezar
+## Nuevas implementaciones
 
 - Implementacion de bloques de gutenberg, con solo agregar el nombre en /core/blocks-gutenberg.php y crear un archivo en /templates. La estrunctura de bloque es la siguiente:
 ```php
-$blocks = [ 
-        
-        (object) array(
-            'pageName' => "Global", // Nombre de la pagina a donde pertenece 
-            'src' => "page/home", // ruta de la carpeta que esta dentro de /template
-            'blocks' => array(
-                "Espaciado", // Nombre del bloque
-            ),
-        ),
+$blocks = [      
+ (object) array(
+     'pageName' => "Global", // Nombre de la pagina a donde pertenece 
+     'src' => "page/home", // ruta de la carpeta que esta dentro de /template
+     'blocks' => array(
+         "Espaciado", // Nombre del bloque
+     ),
+ ),
+];
+```
+- Aplica el calc con clases, primero hay que configurar los tamaños de referencia para desktop y mobile en /src/sass/common/variables.scss, luego ponder el tamaño que deseamos de esta manera ctext-[12], esto aplica un font-size de calc(100vw * (12 / var(--width-base))), un ejemplo mas solido es en la pagina de garantia
 
-
- ];
+```html
+<h2 class="cmb-[31] font-ubuntu text-darkBlue font-bold cleading-[48] ctext-[42]">Te entendemos, te ayudamos</h2>
 ```
