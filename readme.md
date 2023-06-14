@@ -81,6 +81,7 @@ $blocks = [
  ),
 ];
 ```
+- Los bloques de gutenberg, necesitan del plugin de acf para funcionar.
 - Aplica el calc con clases, primero hay que configurar los tamaños de referencia para desktop y mobile en /src/sass/common/variables.scss, luego ponder el tamaño que deseamos de esta manera ctext-[12], esto aplica un font-size de calc(100vw * (12 / var(--width-base))), un ejemplo mas solido es en la pagina de garantia
 
 ```html
