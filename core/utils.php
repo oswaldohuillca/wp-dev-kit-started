@@ -213,6 +213,6 @@ function get_keywords_block_name ($name){
 
 // CAL
 
-function ca (int $number = 1){
+function ca ($number = 1){
   return "calc(100vw * ($number / var(--width-base)))";
 }

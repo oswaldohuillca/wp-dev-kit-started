@@ -66,3 +66,4 @@ const archive = archiver('zip', {
 pnpm run zip
 ```
 - Suba el zip a su página con WORDPRESS y listo.
+
