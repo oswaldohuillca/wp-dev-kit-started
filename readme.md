@@ -67,3 +67,20 @@ pnpm run zip
 ```
 - Suba el zip a su página con WORDPRESS y listo.
 
+## Como empezar
+
+- Implementacion de bloques de gutenberg, con solo agregar el nombre en /core/blocks-gutenberg.php y crear un archivo en /templates. La estrunctura de bloque es la siguiente:
+```php
+$blocks = [ 
+        
+        (object) array(
+            'pageName' => "Global", // Nombre de la pagina a donde pertenece 
+            'src' => "page/home", // ruta de la carpeta que esta dentro de /template
+            'blocks' => array(
+                "Espaciado", // Nombre del bloque
+            ),
+        ),
+
+
+ ];
+```
