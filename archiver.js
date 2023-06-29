@@ -28,6 +28,7 @@ output.on('end', function () {
 archive.on('warning', function (err) {
   if (err.code === 'ENOENT') {
     // log warning
+    console.warn(err)
   } else {
     // throw error
     throw err

@@ -1,0 +1,27 @@
+{
+  "name": "oswaldo/wp-dev-kit",
+  "description": "A simple WP theme dev kit",
+  "type": "project",
+  "require": {
+    "vlucas/phpdotenv": "^5.5",
+    "spatie/ignition": "^1.9"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Oswaldo\\WpDevKit\\": "app/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Oswaldo"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true
+    }
+  }
+}

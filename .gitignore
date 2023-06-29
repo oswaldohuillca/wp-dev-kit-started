@@ -26,7 +26,11 @@ dist-ssr
 #files
 .env
 pnpm-lock.yaml
+package.lock.json
+yarn.lock.json
+composer.lock
 
 #folders
 wp_data
 db_data
+vendor

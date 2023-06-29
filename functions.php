@@ -4,8 +4,9 @@ if (!defined('ABSPATH')) {
   exit; // Exit if accessed directly.
 }
 
-require(__DIR__ . "/core/core.php");
+require_once(__DIR__ . '/vendor/autoload.php');
 
-WpDevKit::load_env();
+use Oswaldo\WpDevKit\core\WpDevKit;
 
-new WpDevKit();
+// Initialize WpDevKit.
+WpDevKit::init();

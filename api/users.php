@@ -2,5 +2,5 @@
 
 function users_handler()
 {
-  return ["foo" => "bar"];
+  echo json_encode(["foo" => "bar"]);
 }
