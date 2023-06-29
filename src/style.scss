@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-h1 {
-  @apply text-white bg-red-400;
+body {
+  background-color: #000;
 }
