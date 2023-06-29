@@ -66,3 +66,22 @@ const archive = archiver('zip', {
 pnpm run zip
 ```
 - Suba el zip a su página con WORDPRESS y listo.
+
+## Release
+
+### Script Module
+
+Los script module traen una nueva caracteristica, supongamos que tienes las siguientes páginas: Inicio, Nosotros, etc... para cada pagina se creará un diferente **script** basado en carpetas.
+
+```bash
+# Root Folder
+api
+core
+src
+templates
+  - home.php # El script sera dist/assets/home.js
+  - about.php # El script sera dist/assets/about.js
+  - ...etc.php # El script sera dist/assets/..etc.js
+style.css
+package.json
+```
