@@ -10,8 +10,7 @@ class WpDevKit
 {
   public static function init()
   {
-    $dotenv = Dotenv::createUnsafeMutable(dirname(dirname(__DIR__)));
-    $dotenv->load();
+    WpDevKit::load_env();
 
     $build_dir = new BuildDir();
     $build_dir->get();
@@ -22,6 +21,21 @@ class WpDevKit
     $api->create();
   }
 
+  /**
+   * read and load .env eviroments
+   */
+  private static function load_env()
+  {
+    if (!WpDevKit::find_env_file(".env") && !WpDevKit::find_env_file(".env.production")) return;
+
+    $dotenv = Dotenv::createUnsafeMutable(dirname(dirname(__DIR__)));
+    $dotenv->load();
+  }
+
+  private static function find_env_file(string $filename): bool
+  {
+    return file_exists(dirname(dirname(__DIR__)) . "/$filename");
+  }
 
   /**
    * get core reusable functions

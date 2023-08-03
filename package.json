@@ -27,6 +27,7 @@
     "partials/**/*",
     "public/**/*",
     "templates/**/*",
+    "vendor/**/*",
     "footer.php",
     "functions.php",
     "header.php",
