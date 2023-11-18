@@ -1,13 +1,12 @@
 {
   "name": "wordpress-dev-kit-started",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "tail:generate": "npx tailwindcss init --full",
     "zip": "npm run build && node archiver"
   },
   "devDependencies": {
