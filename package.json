@@ -20,8 +20,6 @@
     "release": "release-it"
   },
   "devDependencies": {
-    "@commitlint/cli": "^18.6.0",
-    "@commitlint/config-conventional": "^18.6.0",
     "@release-it/conventional-changelog": "^8.0.1",
     "@types/node": "^20.9.1",
     "archiver": "^6.0.1",
@@ -45,41 +43,7 @@
       },
       "plugins": {
         "@release-it/conventional-changelog": {
-          "infile": "CHANGELOG.md",
-          "preset": {
-            "name": "conventionalcommits",
-            "types": [
-              {
-                "type": "feat",
-                "section": "Features"
-              },
-              {
-                "type": "fix",
-                "section": "Bug Fixes"
-              },
-              {
-                "type": "perf",
-                "section": "Performance Improvements"
-              },
-              {
-                "type": "revert",
-                "section": "Reverts"
-              },
-              {
-                "type": "docs",
-                "section": "Documentation"
-              },
-              {
-                "type": "refactor",
-                "section": "Code Refactoring"
-              },
-              {
-                "type": "test",
-                "section": "Tests"
-              },
-              {}
-            ]
-          }
+          "infile": "CHANGELOG.md"
         }
       }
     },
