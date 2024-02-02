@@ -1,38 +1,53 @@
-## Nota:
+## Description:
 
-Este proyecto es para quienes son desarradolles WORDPRESS, practicamente para crear "tema hijo" de cualquier tema padre que desea.
+This project is for those who are ***WORDPRESS Developers,*** practically to create "Child Themes" of any parent Theme.
 
-Cuenta con Tailwindcss, vite, sass, live reload.
 
-## Como empezar
+## Get Started
 
-- Clona el repositorio y cambia el nombre de la capeta alusivo al proyecto que vas a trabajar.
+- Clone this repository and asign the folder name
 
 ```bash
 git clone --depth 1 https://github.com/oswaldohuillca/wp-dev-kit-started.git your-theme-name
 ```
-Este comando clonará el proyecto dentro de una carpeta ***your-theme-name***
+This command will clone the project inside folder ***your-theme-name***
 
-- Instala todas la dependencias con npm, yarn o pnpm.
+- Install all NPM depencencies with npm, yarn, pnpm or bun.
 
 ```bash
 pnpm install
 ```
 
-- Ejecuta el modo desarrollo
-
+- Install all PHP dependencies with composer
 ```bash
-pnpm run dev
+composer install
 ```
 
-- Para poder crear el build ejecute.
+- Copy ***.env.example*** to ***.env*** file.
+```bash
+cp .env.example .env
+```
+
+- Run Development mode.
 
 ```bash
+pnpm dev #or
+yarn dev #or
+bun dev #or
+npm run dev
+```
+
+- Build the project
+
+```bash
+pnpm build #or
+yarn build #or
+bun run build #or
 pnpm run build
 ```
 
-- Para poder comprimir en un zip, asegurate de incluir todos los archivos y carpetas que dependen tu tema.
-esto  puesdes hacerlo en el archivo ***package.json***
+- Compress the project inside .zip file, keep in mind the files that you must include within the .zip.
+  You can check the file ***package.json***
 
 ```json
  "files": [
@@ -44,10 +59,12 @@ esto  puesdes hacerlo en el archivo ***package.json***
     "functions.php",
     "header.php",
     "page.php",
-    "style.css"
+    "style.css",
+    "...otherFiles"
   ]
 ```
-- Para cambiar el Nombre de tu archivo comprimido edita el archivo ***archiver.js***. En este caso el nombre del zip será **generatepress_child.zip**
+
+- To change the name of your compressed file ***archiver.js***. In this case the name of the zip will be  **generatepress_child.zip**
 
 ```js
 const ZIP_NAME = 'generatepress_child'
@@ -60,9 +77,13 @@ const archive = archiver('zip', {
 })
 ```
 
-- Finalmente ejecute **npm run zip** para generar su TEMA de WORDPRESS.
+- Finally run **npm run zip** to generate your **WORDPRESS CHILD THEME**
 
 ```bash
-pnpm run zip
+pnpm zip #or
+yarn zip #or
+bun zip #or
+npm run zip #or
 ```
-- Suba el zip a su página con WORDPRESS y listo.
+
+- Upload the zip file in your page with **WORDPRESS.**
