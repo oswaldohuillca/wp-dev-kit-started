@@ -3,6 +3,14 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
+  "author": {
+    "name": "Oswaldo",
+    "email": "oswaldohuillca@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oswaldohuillca/wp-dev-kit-started"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
