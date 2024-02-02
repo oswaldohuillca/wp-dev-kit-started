@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/oswaldohuillca/wp-dev-kit-started"
+    "url": "git+https://github.com/oswaldohuillca/wp-dev-kit-started.git"
   },
   "scripts": {
     "dev": "vite",
@@ -76,12 +76,21 @@
               {
                 "type": "test",
                 "section": "Tests"
-              }
+              },
+              {}
             ]
           }
         }
       }
+    },
+    "npm": {
+      "publish": false
     }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "files": [
     "api/**/*",
