@@ -26,12 +26,11 @@
     "husky": "^9.0.10",
     "release-it": "^17.0.3",
     "typescript": "^5.2.2",
+    "sass": "^1.69.5",
     "vite": "^5.0.0",
     "vite-plugin-full-reload": "^1.1.0"
   },
-  "dependencies": {
-    "sass": "^1.69.5"
-  },
+  "dependencies": {},
   "release-it": {
     "git": {
       "commitMessage": "chore(release): v${version}",
