@@ -51,11 +51,6 @@
       "publish": false
     }
   },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
   "files": [
     "api/**/*",
     "app/**/*",
